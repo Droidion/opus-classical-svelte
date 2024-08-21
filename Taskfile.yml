@@ -1,0 +1,16 @@
+version: '3'
+
+tasks:
+  # Run Svelte in dev mode
+  dev:
+    cmds:
+      - bun --bun run dev
+  # Create production build
+  build:
+    cmds:
+      - bun run build
+  # Run production build
+  prod:
+    deps: [build]
+    cmds:
+      - bun ./build/index.js
