@@ -10,6 +10,8 @@ jobs:
   build-app:
     name: build-app
     runs-on: ubuntu-latest
+    env:
+      DATABASE_URL: ''
     steps:
       - uses: actions/checkout@v4
       - uses: oven-sh/setup-bun@v2
