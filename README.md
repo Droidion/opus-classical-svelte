@@ -2,6 +2,8 @@
 
 With TypeScript, Svelte, and Bun.
 
+[![CI](https://github.com/Droidion/opus-classical-svelte/actions/workflows/ci.yml/badge.svg)](https://github.com/Droidion/opus-classical-svelte/actions/workflows/ci.yml)
+
 ## Run dev
 
 - Have [Bun](https://bun.sh/) installed.
