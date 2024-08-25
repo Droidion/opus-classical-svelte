@@ -9,16 +9,16 @@ export const periodsTable = pgTable("periods", {
   slug: text("slug").notNull(),
 });
 
-type SelectPeriod = typeof periodsTable.$inferSelect;
+export type Period = typeof periodsTable.$inferSelect;
 
-async function getPeriods(): Promise<SelectPeriod[]> {
+async function getPeriods(): Promise<Period[]> {
   return db.select().from(periodsTable);
 }
 
-interface PeriodsRepo {
-  getPeriods(): Promise<SelectPeriod[]>;
+interface PeriodRepo {
+  getPeriods(): Promise<Period[]>;
 }
 
-export const periodsRepo: PeriodsRepo = {
+export const periodRepo: PeriodRepo = {
   getPeriods,
 };

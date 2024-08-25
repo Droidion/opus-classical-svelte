@@ -8,6 +8,9 @@
   const { data }: Props = $props();
 </script>
 
-{#each data.periods as period}
-  <div>{period.name}</div>
+{#each data.periodsWithComposers as periodWithComposers}
+  <h1>{periodWithComposers.period.name}</h1>
+  {#each periodWithComposers.composers as composer}
+    <div>{composer.firstName} {composer.lastName}</div>
+  {/each}
 {/each}
