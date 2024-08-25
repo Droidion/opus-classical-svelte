@@ -1,8 +1,8 @@
 import type { PageServerLoad } from './$types';
-import { getPeriods } from '$lib/db/queries/getPeriods'
+import { periodsRepo } from '$lib/db/periods'
 
 export const load: PageServerLoad = async () => {
-  const periods = await getPeriods()
+  const periods = await periodsRepo.getPeriods()
 	return {
 		periods,
 	};
