@@ -1,24 +1,26 @@
-export const THEME_ATTRIBUTE = 'data-theme';
-export const STORAGE_KEY = 'theme';
-export const DARK = 'dark';
-export const LIGHT = 'light';
-export const MEDIA_PREFER_DARK = `(prefers-color-scheme: ${DARK})`;
+const THEME_ATTRIBUTE = "data-theme";
+const STORAGE_KEY = "theme";
+const DARK = "dark";
+const LIGHT = "light";
+const MEDIA_PREFER_DARK = `(prefers-color-scheme: ${DARK})`;
 
-export class ThemeSwitcher {
+class ThemeSwitcher {
   #themeToggle;
   #prefersDarkScheme;
   #currentTheme;
 
   constructor() {
-    this.#themeToggle = document.getElementById('theme-toggle');
+    this.#themeToggle = document.getElementById("theme-toggle");
     this.#prefersDarkScheme = window.matchMedia(MEDIA_PREFER_DARK);
     this.#currentTheme = localStorage.getItem(STORAGE_KEY);
     this.init();
   }
 
   init() {
-    this.#themeToggle?.addEventListener('change', () => this.switchTheme());
-    this.#prefersDarkScheme?.addEventListener('change', (e) => this.handleOSThemeChange(e));
+    this.#themeToggle?.addEventListener("change", () => this.switchTheme());
+    this.#prefersDarkScheme?.addEventListener("change", (e) =>
+      this.handleOSThemeChange(e),
+    );
     const currentTheme = document.documentElement.getAttribute(THEME_ATTRIBUTE);
     if (this.#themeToggle) {
       this.#themeToggle.checked = currentTheme === DARK;
@@ -42,3 +44,5 @@ export class ThemeSwitcher {
     this.#themeToggle.checked = theme === DARK;
   }
 }
+
+document.addEventListener("DOMContentLoaded", () => new ThemeSwitcher());
