@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { PageData } from "./$types";
-  import { PUBLIC_IMAGES_URL } from "$env/dynamic/public";
+  import { env } from "$env/dynamic/public";
   import { formatWorkName, formatYearsRangeString } from "$lib/helpers";
   import RecordingCard from "$components/cards/RecordingCard.svelte";
 
@@ -46,7 +46,7 @@
         links={recording.links}
         performers={recording.performers}
         recording={recording.recording}
-        imagesUrl={PUBLIC_IMAGES_URL}
+        imagesUrl={env.PUBLIC_IMAGES_URL}
       />
     {/each}
   </div>

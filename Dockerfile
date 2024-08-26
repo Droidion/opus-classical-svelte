@@ -14,8 +14,6 @@ RUN bun install --frozen-lockfile
 COPY . .
 
 # Build the SvelteKit app
-ENV DATABASE_URL=
-ENV PUBLIC_IMAGES_URL=
 RUN bun run build
 
 # Start a new stage for a smaller final image
