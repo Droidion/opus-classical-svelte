@@ -1,11 +1,11 @@
-import { pgTable, serial, numeric, text } from "drizzle-orm/pg-core";
+import { pgTable, serial, integer, text } from "drizzle-orm/pg-core";
 import { db } from "./index";
 
 export const periodsTable = pgTable("periods", {
   id: serial("id").primaryKey(),
   name: text("name").notNull(),
-  yearStart: numeric("year_start").notNull(),
-  yearEnd: numeric("year_end"),
+  yearStart: integer("year_start").notNull(),
+  yearEnd: integer("year_end"),
   slug: text("slug").notNull(),
 });
 

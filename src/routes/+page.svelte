@@ -1,5 +1,7 @@
 <script lang="ts">
   import type { PageData } from "./$types";
+  import PeriodHeader from "$components/cards/PeriodHeader.svelte";
+  import ComposerCard from "$components/cards/ComposerCard.svelte";
 
   interface Props {
     data: PageData;
@@ -8,9 +10,15 @@
   const { data }: Props = $props();
 </script>
 
-{#each data.periodsWithComposers as periodWithComposers}
-  <h1>{periodWithComposers.period.name}</h1>
-  {#each periodWithComposers.composers as composer}
-    <div>{composer.firstName} {composer.lastName}</div>
+<div>
+  <h1>Composers</h1>
+  {#each data.periodsWithComposers as periodWithComposers}
+    <PeriodHeader period={periodWithComposers.period} />
+    <hr />
+    <div class="mb-4 flex flex-wrap">
+      {#each periodWithComposers.composers as composer}
+        <ComposerCard {composer} />
+      {/each}
+    </div>
   {/each}
-{/each}
+</div>
