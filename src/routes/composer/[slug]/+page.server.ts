@@ -14,7 +14,6 @@ export const load: PageServerLoad = async ({ params }) => {
     return;
   }
   const works = await workRepo.getWorksByComposerId(composer.id);
-  console.log(works);
   const genresWithWorks = Object.values(
     works.reduce<Record<string, GenreWithWorks>>((acc, work) => {
       if (!acc[work.genreName]) {
