@@ -10,6 +10,10 @@
   const { data }: Props = $props();
 </script>
 
+<svelte:head>
+  <title>Composers | Opus Classical</title>
+</svelte:head>
+
 <div>
   <h1>Composers</h1>
   {#each data.periodsWithComposers as periodWithComposers}

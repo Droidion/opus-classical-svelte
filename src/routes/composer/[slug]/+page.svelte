@@ -12,6 +12,10 @@
   const genresWithWorks = $derived(data.genresWithWorks || []);
 </script>
 
+<svelte:head>
+  <title>{composer?.lastName} | Opus Classical</title>
+</svelte:head>
+
 <div>
   {#if composer}
     <ComposerDetails {composer} />

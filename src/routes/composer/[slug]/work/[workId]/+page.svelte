@@ -22,6 +22,10 @@
   const link = $derived(`composer/${composer.slug}`);
 </script>
 
+<svelte:head>
+  <title>{workName} | Opus Classical</title>
+</svelte:head>
+
 <div>
   <h1>
     <span>{workName}</span>
