@@ -1,16 +1,9 @@
-import {
-  pgTable,
-  pgView,
-  serial,
-  integer,
-  text,
-  boolean,
-} from "drizzle-orm/pg-core";
+import { pgTable, serial, integer, text, boolean } from "drizzle-orm/pg-core";
 import { db } from "./index";
 import { eq } from "drizzle-orm";
 import { periodsTable } from "./periods";
 
-const composersTable = pgTable("composers_with_countries", {
+export const composersTable = pgTable("composers_with_countries", {
   id: serial("id").primaryKey(),
   firstName: text("first_name").notNull(),
   lastName: text("last_name").notNull(),
