@@ -3,7 +3,7 @@ import { db } from "./index";
 import { eq } from "drizzle-orm";
 import { composersTable } from "./composers";
 
-const worksTable = pgTable("works_with_genres", {
+export const worksTable = pgTable("works_with_genres", {
   id: integer("id").primaryKey(),
   title: text("title").notNull(),
   yearStart: integer("year_start"),

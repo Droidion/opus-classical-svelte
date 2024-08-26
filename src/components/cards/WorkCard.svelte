@@ -25,7 +25,7 @@
     formatYearsRangeString(work.yearStart, work.yearFinish),
   );
   let workLength = $derived(formatWorkLength(work.averageMintues));
-  let link = $derived(`composer/${composerSlug}/work/${work.id}`);
+  let link = $derived(`/composer/${composerSlug}/work/${work.id}`);
 </script>
 
 <a href={link}>
