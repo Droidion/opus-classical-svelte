@@ -10,11 +10,11 @@ declare global {
   }
 }
 
-declare module "$env/static/private" {
+declare module "$env/dynamic/private" {
   export const DATABASE_URL: string;
 }
 
-declare module "$env/static/public" {
+declare module "$env/dynamic/public" {
   export const PUBLIC_IMAGES_URL: string;
 }
 

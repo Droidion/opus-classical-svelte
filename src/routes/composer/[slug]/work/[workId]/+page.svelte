@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { PageData } from "./$types";
-  import { PUBLIC_IMAGES_URL } from "$env/static/public";
+  import { PUBLIC_IMAGES_URL } from "$env/dynamic/public";
   import { formatWorkName, formatYearsRangeString } from "$lib/helpers";
   import RecordingCard from "$components/cards/RecordingCard.svelte";
 
