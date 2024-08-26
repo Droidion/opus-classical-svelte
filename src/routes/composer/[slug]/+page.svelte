@@ -8,8 +8,8 @@
   }
 
   const { data }: Props = $props();
-  const composer = data.composer;
-  const genresWithWorks = data.genresWithWorks || [];
+  const composer = $derived(data.composer);
+  const genresWithWorks = $derived(data.genresWithWorks || []);
 </script>
 
 <div>

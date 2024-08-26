@@ -9,10 +9,11 @@
   }
 
   const { data }: Props = $props();
-  const composer = data.composer;
-  const work = data.work;
-  const recordingsWithPerformersAndLinks =
-    data.recordingsWithPerformersAndLinks || [];
+  const composer = $derived(data.composer);
+  const work = $derived(data.work);
+  const recordingsWithPerformersAndLinks = $derived(
+    data.recordingsWithPerformersAndLinks || [],
+  );
 
   const workName = $derived(formatWorkName(work.title, work.no, work.nickname));
   const workYears = $derived(

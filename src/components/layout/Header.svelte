@@ -1,6 +1,7 @@
 <script lang="ts">
-  import MainLogo from '$components/icons/MainLogo.svelte';
-  import ThemeSwitcher from '$components/ui/ThemeSwitcher.svelte';
+  import MainLogo from "$components/icons/MainLogo.svelte";
+  import ThemeSwitcher from "$components/ui/ThemeSwitcher.svelte";
+  import Search from "$components/ui/Search.svelte";
 </script>
 
 <header
@@ -11,7 +12,6 @@
     <div class="mr-4">
       <ThemeSwitcher />
     </div>
-    <!--<HtmxSearch />
-    <div id="search-overlay"></div>-->
+    <Search />
   </nav>
 </header>
