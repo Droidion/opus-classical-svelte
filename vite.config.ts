@@ -8,8 +8,7 @@ export default defineConfig({
     SvelteKitPWA({
       srcDir: "./src",
       mode: "development",
-      strategies: "injectManifest",
-      filename: "prompt-sw.ts",
+      strategies: "generateSW",
       scope: "/",
       base: "/",
       manifest: {
@@ -32,9 +31,6 @@ export default defineConfig({
             type: "image/png",
           },
         ],
-      },
-      injectManifest: {
-        globPatterns: ["client/**/*.{js,css,ico,png,svg,webp,woff,woff2}"],
       },
       devOptions: {
         enabled: true,

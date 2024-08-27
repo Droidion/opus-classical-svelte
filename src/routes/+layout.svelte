@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { registerPWA } from "$lib/pwa";
+  import { registerSW } from "virtual:pwa-register";
   import "../app.css";
   import Footer from "$components/layout/Footer.svelte";
   import Header from "$components/layout/Header.svelte";
@@ -8,7 +8,14 @@
 
   onMount(() => {
     if (browser) {
-      registerPWA();
+      const updateSW = registerSW({
+        onNeedRefresh() {
+          // Prompt user to refresh
+        },
+        onOfflineReady() {
+          // Notify user app is ready for offline use
+        },
+      });
     }
   });
 </script>
