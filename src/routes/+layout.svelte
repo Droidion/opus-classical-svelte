@@ -2,6 +2,8 @@
   import "../app.css";
   import Footer from "$components/layout/Footer.svelte";
   import Header from "$components/layout/Header.svelte";
+
+  export const prerender = true;
 </script>
 
 <div
