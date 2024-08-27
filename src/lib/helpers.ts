@@ -1,6 +1,8 @@
+const MAX_VALID_YEAR = 9999;
+
 // IsValidYear checks if given string is a 4 digits number, like "1234" (not "-123", "123", or "12345").
 export function isValidYear(num: number | null): boolean {
-  return num !== null && num > 1 && num < 10_000;
+  return num !== null && num > 1 && num <= MAX_VALID_YEAR;
 }
 
 // SliceYear returns slice of the full year, like 85 from 1985.
@@ -79,7 +81,6 @@ export function formatWorkName(
   workTitle: string,
   workNo: number | null,
   workNickname: string | null,
-  skipHtml = false,
 ): string {
   if (workTitle === "") {
     return "";
@@ -89,11 +90,7 @@ export function formatWorkName(
     workName = `${workName} No. ${workNo}`;
   }
   if (workNickname !== null) {
-    workName = skipHtml
-      ? `${workName} ${workNickname}`
-      : `${workName} ${workNickname}`;
+    workName = `${workName} ${workNickname}`;
   }
   return workName;
 }
-
-export const isProd = () => Bun.env.NODE_ENV === "production";
