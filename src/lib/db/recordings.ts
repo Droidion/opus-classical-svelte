@@ -19,7 +19,8 @@ async function getRecordingsByWork(workId: number): Promise<Recording[]> {
   return db
     .select()
     .from(recordingsTable)
-    .where(eq(recordingsTable.workId, workId));
+    .where(eq(recordingsTable.workId, workId))
+    .orderBy(recordingsTable.yearFinish);
 }
 
 interface RecordingRepo {
