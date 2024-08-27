@@ -36,7 +36,8 @@ async function getWorksByComposerId(composerId: number): Promise<Work[]> {
   return await db
     .select()
     .from(worksTable)
-    .where(eq(worksTable.composerId, composerId));
+    .where(eq(worksTable.composerId, composerId))
+    .orderBy(worksTable.genreName, worksTable.sort, worksTable.catalogueNumber);
 }
 
 interface WorkRepo {
