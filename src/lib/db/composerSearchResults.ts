@@ -15,10 +15,6 @@ async function getComposerSearchResults(): Promise<ComposerSearchResult[]> {
   return db.select().from(composerSearchResultsTable);
 }
 
-interface ComposerSearchResultRepo {
-  getComposerSearchResults(): Promise<ComposerSearchResult[]>;
-}
-
-export const composerSearchResultRepo: ComposerSearchResultRepo = {
+export const composerSearchResultRepo = {
   getComposerSearchResults,
 };

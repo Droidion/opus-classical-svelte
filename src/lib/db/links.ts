@@ -19,10 +19,6 @@ async function getLinksByRecordings(recordingIds: number[]): Promise<Link[]> {
     .where(inArray(linksTable.recordingId, recordingIds));
 }
 
-interface LinkRepo {
-  getLinksByRecordings(recordingIds: number[]): Promise<Link[]>;
-}
-
-export const linkRepo: LinkRepo = {
+export const linkRepo = {
   getLinksByRecordings,
 };

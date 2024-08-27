@@ -40,12 +40,7 @@ async function getWorksByComposerId(composerId: number): Promise<Work[]> {
     .orderBy(worksTable.genreName, worksTable.sort, worksTable.catalogueNumber);
 }
 
-interface WorkRepo {
-  getWorkById(id: number): Promise<Work | undefined>;
-  getWorksByComposerId(composerId: number): Promise<Work[]>;
-}
-
-export const workRepo: WorkRepo = {
+export const workRepo = {
   getWorkById,
   getWorksByComposerId,
 };

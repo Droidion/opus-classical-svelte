@@ -21,10 +21,6 @@ async function getPerformersByRecordings(
     .where(inArray(performersTable.recordingId, recordingIds));
 }
 
-interface PerformerRepo {
-  getPerformersByRecordings(recordingIds: number[]): Promise<Performer[]>;
-}
-
-export const performerRepo: PerformerRepo = {
+export const performerRepo = {
   getPerformersByRecordings,
 };

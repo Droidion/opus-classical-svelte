@@ -36,12 +36,7 @@ async function getComposerBySlug(slug: string): Promise<Composer | undefined> {
   return composers[0];
 }
 
-interface ComposerRepo {
-  getComposers(): Promise<Composer[]>;
-  getComposerBySlug(slug: string): Promise<Composer | undefined>;
-}
-
-export const composerRepo: ComposerRepo = {
+export const composerRepo = {
   getComposers,
   getComposerBySlug,
 };

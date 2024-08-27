@@ -23,10 +23,6 @@ async function getRecordingsByWork(workId: number): Promise<Recording[]> {
     .orderBy(recordingsTable.yearFinish);
 }
 
-interface RecordingRepo {
-  getRecordingsByWork(workId: number): Promise<Recording[]>;
-}
-
-export const recordingRepo: RecordingRepo = {
+export const recordingRepo = {
   getRecordingsByWork,
 };

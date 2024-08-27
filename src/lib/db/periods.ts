@@ -15,10 +15,6 @@ async function getPeriods(): Promise<Period[]> {
   return db.select().from(periodsTable);
 }
 
-interface PeriodRepo {
-  getPeriods(): Promise<Period[]>;
-}
-
-export const periodRepo: PeriodRepo = {
+export const periodRepo = {
   getPeriods,
 };
