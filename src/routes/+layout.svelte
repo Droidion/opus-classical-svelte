@@ -1,7 +1,16 @@
 <script lang="ts">
+  import { registerPWA } from "$lib/pwa";
   import "../app.css";
   import Footer from "$components/layout/Footer.svelte";
   import Header from "$components/layout/Header.svelte";
+  import { onMount } from "svelte";
+  import { browser } from "$app/environment";
+
+  onMount(() => {
+    if (browser) {
+      registerPWA();
+    }
+  });
 </script>
 
 <div

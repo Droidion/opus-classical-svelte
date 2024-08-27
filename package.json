@@ -17,6 +17,8 @@
     "@sveltejs/kit": "^2.5.24",
     "@sveltejs/vite-plugin-svelte": "^4.0.0-next.6",
     "@types/eslint": "^9.6.0",
+    "@types/serviceworker": "^0.0.94",
+    "@vite-pwa/sveltekit": "^0.6.1",
     "autoprefixer": "^10.4.20",
     "eslint": "^9.9.1",
     "eslint-plugin-format": "^0.1.2",
