@@ -3,14 +3,17 @@ import { handleErrorWithSentry, sentryHandle } from "@sentry/sveltekit";
 import * as Sentry from "@sentry/sveltekit";
 import { env } from "$env/dynamic/public";
 import type { Handle } from "@sveltejs/kit";
+import { dev } from "$app/environment";
 
-Sentry.init({
-  dsn: env.PUBLIC_SENTRY_DSN,
-  tracesSampleRate: 1.0,
+if (!dev) {
+  Sentry.init({
+    dsn: env.PUBLIC_SENTRY_DSN,
+    tracesSampleRate: 1.0,
 
-  // uncomment the line below to enable Spotlight (https://spotlightjs.com)
-  // spotlight: import.meta.env.DEV,
-});
+    // uncomment the line below to enable Spotlight (https://spotlightjs.com)
+    // spotlight: import.meta.env.DEV,
+  });
+}
 
 const securityHeaders: Handle = async ({ event, resolve }) => {
   const response = await resolve(event);
