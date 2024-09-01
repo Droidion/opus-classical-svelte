@@ -1,25 +1,25 @@
-<script lang="ts">
-  import type { PageData } from "./$types";
-  import { env } from "$env/dynamic/public";
-  import { formatWorkName, formatYearsRangeString } from "$lib/helpers";
-  import RecordingCard from "$components/cards/RecordingCard.svelte";
+<script lang='ts'>
+  import type { PageData } from './$types'
+  import { env } from '$env/dynamic/public'
+  import { formatWorkName, formatYearsRangeString } from '$lib/helpers'
+  import RecordingCard from '$components/cards/RecordingCard.svelte'
 
   interface Props {
-    data: PageData;
+    data: PageData
   }
 
-  const { data }: Props = $props();
-  const composer = $derived(data.composer);
-  const work = $derived(data.work);
+  const { data }: Props = $props()
+  const composer = $derived(data.composer)
+  const work = $derived(data.work)
   const recordingsWithPerformersAndLinks = $derived(
     data.recordingsWithPerformersAndLinks || [],
-  );
+  )
 
-  const workName = $derived(formatWorkName(work.title, work.no, work.nickname));
+  const workName = $derived(formatWorkName(work.title, work.no, work.nickname))
   const workYears = $derived(
     formatYearsRangeString(work.yearStart, work.yearFinish),
-  );
-  const link = $derived(`composer/${composer.slug}`);
+  )
+  const link = $derived(`composer/${composer.slug}`)
 </script>
 
 <svelte:head>
@@ -30,7 +30,7 @@
   <h1>
     <span>{workName}</span>
   </h1>
-  <div class="mb-4 w-full text-center">
+  <div class='mb-4 w-full text-center'>
     <a href={link}>
       {composer.firstName}
       {composer.lastName}
@@ -40,7 +40,7 @@
   </div>
   <h2>Recommended Recordings</h2>
   <hr />
-  <div class="full-width mb-4 flex flex-wrap">
+  <div class='full-width mb-4 flex flex-wrap'>
     {#each recordingsWithPerformersAndLinks as recording}
       <RecordingCard
         links={recording.links}

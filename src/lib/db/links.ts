@@ -1,24 +1,24 @@
-import { pgTable, serial, integer, text } from "drizzle-orm/pg-core";
-import { db } from "./index";
-import { inArray } from "drizzle-orm";
+import { integer, pgTable, text } from 'drizzle-orm/pg-core'
+import { inArray } from 'drizzle-orm'
+import { db } from './index'
 
-export const linksTable = pgTable("links_with_streamers", {
-  recordingId: integer("recording_id").notNull(),
-  recordingLink: text("recording_link").notNull(),
-  streamer: text("streamer").notNull(),
-  icon: text("icon"),
-  linkPrefix: text("link_prefix").notNull(),
-});
+export const linksTable = pgTable('links_with_streamers', {
+  recordingId: integer('recording_id').notNull(),
+  recordingLink: text('recording_link').notNull(),
+  streamer: text('streamer').notNull(),
+  icon: text('icon'),
+  linkPrefix: text('link_prefix').notNull(),
+})
 
-export type Link = typeof linksTable.$inferSelect;
+export type Link = typeof linksTable.$inferSelect
 
 async function getLinksByRecordings(recordingIds: number[]): Promise<Link[]> {
   return db
     .select()
     .from(linksTable)
-    .where(inArray(linksTable.recordingId, recordingIds));
+    .where(inArray(linksTable.recordingId, recordingIds))
 }
 
 export const linkRepo = {
   getLinksByRecordings,
-};
+}
