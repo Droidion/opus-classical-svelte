@@ -1,10 +1,10 @@
 <script lang='ts'>
-  import PerformerCard from './PerformerCard.svelte'
-  import LinkCard from './LinkCard.svelte'
-  import type { Recording } from '$lib/db/recordings'
-  import { formatWorkLength, formatYearsRangeString } from '$lib/helpers'
   import { type Link } from '$lib/db/links'
+  import { formatWorkLength, formatYearsRangeString } from '$lib/helpers'
   import type { Performer } from '$lib/db/performers'
+  import type { Recording } from '$lib/db/recordings'
+  import LinkCard from './LinkCard.svelte'
+  import PerformerCard from './PerformerCard.svelte'
 
   interface Props {
     imagesUrl: string

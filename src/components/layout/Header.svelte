@@ -1,7 +1,7 @@
 <script lang='ts'>
   import MainLogo from '$components/icons/MainLogo.svelte'
-  import ThemeSwitcher from '$components/ui/ThemeSwitcher.svelte'
   import Search from '$components/ui/Search.svelte'
+  import ThemeSwitcher from '$components/ui/ThemeSwitcher.svelte'
 </script>
 
 <header

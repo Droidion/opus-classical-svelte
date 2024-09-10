@@ -1,7 +1,7 @@
 <script lang='ts'>
-  import type { PageData } from './$types'
   import ComposerDetails from '$components/cards/ComposerDetails.svelte'
   import WorkCard from '$components/cards/WorkCard.svelte'
+  import type { PageData } from './$types'
 
   interface Props {
     data: PageData

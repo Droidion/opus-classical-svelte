@@ -1,7 +1,7 @@
-import { integer, pgTable, text } from 'drizzle-orm/pg-core'
 import { eq } from 'drizzle-orm'
-import { worksTable } from './works'
+import { integer, pgTable, text } from 'drizzle-orm/pg-core'
 import { db } from './index'
+import { worksTable } from './works'
 
 export const recordingsTable = pgTable('recordings_with_labels', {
   id: integer('id').primaryKey(),

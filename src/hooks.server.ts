@@ -1,9 +1,9 @@
-import { sequence } from '@sveltejs/kit/hooks'
+import { dev } from '$app/environment'
+import { env } from '$env/dynamic/public'
 import { handleErrorWithSentry, sentryHandle } from '@sentry/sveltekit'
 import * as Sentry from '@sentry/sveltekit'
+import { sequence } from '@sveltejs/kit/hooks'
 import type { Handle } from '@sveltejs/kit'
-import { env } from '$env/dynamic/public'
-import { dev } from '$app/environment'
 
 if (!dev) {
   Sentry.init({

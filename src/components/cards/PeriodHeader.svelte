@@ -1,6 +1,6 @@
 <script lang='ts'>
-  import type { Period } from '$lib/db/periods'
   import { formatYearsRangeString } from '$lib/helpers'
+  import type { Period } from '$lib/db/periods'
 
   interface Props {
     period: Period

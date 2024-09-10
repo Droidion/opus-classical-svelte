@@ -21,3 +21,7 @@ With TypeScript, Svelte, and Bun.
 - `$ bun i`.
 - `$ bun run build`.
 - `$ bun ./build/index.js`.
+
+## Tests
+
+- `$ bun test`.

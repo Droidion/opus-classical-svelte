@@ -1,7 +1,7 @@
-import { boolean, integer, pgTable, serial, text } from 'drizzle-orm/pg-core'
 import { eq } from 'drizzle-orm'
-import { periodsTable } from './periods'
+import { boolean, integer, pgTable, serial, text } from 'drizzle-orm/pg-core'
 import { db } from './index'
+import { periodsTable } from './periods'
 
 export const composersTable = pgTable('composers_with_countries', {
   id: serial('id').primaryKey(),

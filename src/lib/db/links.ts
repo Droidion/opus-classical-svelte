@@ -1,5 +1,5 @@
-import { integer, pgTable, text } from 'drizzle-orm/pg-core'
 import { inArray } from 'drizzle-orm'
+import { integer, pgTable, text } from 'drizzle-orm/pg-core'
 import { db } from './index'
 
 export const linksTable = pgTable('links_with_streamers', {
