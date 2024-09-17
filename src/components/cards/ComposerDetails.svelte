@@ -1,6 +1,6 @@
 <script lang='ts'>
-  import { formatYearsRangeString } from '$lib/helpers'
   import type { Composer } from '$lib/db/composers'
+  import { formatYearsRangeString } from '$lib/helpers'
 
   interface Props {
     composer: Composer

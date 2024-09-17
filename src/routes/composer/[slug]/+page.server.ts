@@ -1,8 +1,8 @@
+import type { Work } from '$lib/db/works'
+import type { PageServerLoad } from './$types'
 import { composerRepo } from '$lib/db/composers'
 import { workRepo } from '$lib/db/works'
 import { error } from '@sveltejs/kit'
-import type { Work } from '$lib/db/works'
-import type { PageServerLoad } from './$types'
 
 export interface GenreWithWorks {
   genreName: string

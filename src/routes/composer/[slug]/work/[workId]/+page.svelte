@@ -1,8 +1,8 @@
 <script lang='ts'>
+  import type { PageData } from './$types'
   import RecordingCard from '$components/cards/RecordingCard.svelte'
   import { env } from '$env/dynamic/public'
   import { formatWorkName, formatYearsRangeString } from '$lib/helpers'
-  import type { PageData } from './$types'
 
   interface Props {
     data: PageData

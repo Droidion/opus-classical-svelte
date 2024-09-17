@@ -1,8 +1,8 @@
 <script lang='ts'>
+  import type { ComposerSearchResult } from '$lib/db/composerSearchResults'
   import { goto } from '$app/navigation'
   import Fuse from 'fuse.js'
   import ky from 'ky'
-  import type { ComposerSearchResult } from '$lib/db/composerSearchResults'
 
   let searchData: ComposerSearchResult[] = $state([])
   let searchResults: ComposerSearchResult[] = $state([])

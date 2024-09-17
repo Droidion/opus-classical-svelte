@@ -1,7 +1,7 @@
 <script lang='ts'>
+  import type { PageData } from './$types'
   import ComposerCard from '$components/cards/ComposerCard.svelte'
   import PeriodHeader from '$components/cards/PeriodHeader.svelte'
-  import type { PageData } from './$types'
 
   interface Props {
     data: PageData

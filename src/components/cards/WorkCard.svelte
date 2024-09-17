@@ -1,11 +1,11 @@
 <script lang='ts'>
+  import type { Work } from '$lib/db/works'
   import {
     formatCatalogueName,
     formatWorkLength,
     formatWorkName,
     formatYearsRangeString,
   } from '$lib/helpers'
-  import type { Work } from '$lib/db/works'
 
   interface Props {
     work: Work

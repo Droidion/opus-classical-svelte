@@ -1,6 +1,6 @@
+import type { PageServerLoad } from './$types'
 import { type Composer, composerRepo } from '$lib/db/composers'
 import { type Period, periodRepo } from '$lib/db/periods'
-import type { PageServerLoad } from './$types'
 
 export interface PeriodsWithComposers {
   period: Period
