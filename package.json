@@ -13,20 +13,20 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
-    "@sentry/sveltekit": "^8.30.0",
+    "@sentry/sveltekit": "^8.31.0",
     "drizzle-orm": "^0.33.0",
     "fuse.js": "^7.0.0",
     "ky": "^1.7.2",
     "postgres": "^3.4.4"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^3.6.2",
+    "@antfu/eslint-config": "^3.7.1",
     "@sveltejs/kit": "^2.5.28",
     "@sveltejs/vite-plugin-svelte": "^4.0.0-next.6",
-    "@types/bun": "^1.1.9",
+    "@types/bun": "^1.1.10",
     "@types/eslint": "^9.6.1",
     "autoprefixer": "^10.4.20",
-    "eslint": "^9.10.0",
+    "eslint": "^9.11.0",
     "eslint-plugin-format": "^0.1.2",
     "eslint-plugin-svelte": "^2.44.0",
     "globals": "^15.9.0",
@@ -38,6 +38,6 @@
     "svelte-check": "^4.0.2",
     "tailwindcss": "^3.4.12",
     "typescript": "^5.6.2",
-    "vite": "^5.4.6"
+    "vite": "^5.4.7"
   }
 }

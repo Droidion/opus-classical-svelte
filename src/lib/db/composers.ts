@@ -22,7 +22,7 @@ export const composersTable = pgTable('composers_with_countries', {
 export type Composer = typeof composersTable.$inferSelect
 
 async function getComposers(): Promise<Composer[]> {
-  return await db.select().from(composersTable)
+  return await db.select().from(composersTable).orderBy(composersTable.lastName)
 }
 
 async function getComposerBySlug(slug: string): Promise<Composer | undefined> {
