@@ -13,31 +13,31 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
-    "@sentry/sveltekit": "^8.33.1",
-    "drizzle-orm": "^0.33.0",
+    "@sentry/sveltekit": "^8.34.0",
+    "drizzle-orm": "^0.35.2",
     "fuse.js": "^7.0.0",
     "ky": "^1.7.2",
     "postgres": "^3.4.4"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^3.7.3",
-    "@sveltejs/kit": "^2.6.1",
+    "@antfu/eslint-config": "^3.8.0",
+    "@sveltejs/kit": "^2.7.1",
     "@sveltejs/vite-plugin-svelte": "^4.0.0-next.6",
-    "@types/bun": "^1.1.10",
+    "@types/bun": "^1.1.11",
     "@types/eslint": "^9.6.1",
     "autoprefixer": "^10.4.20",
-    "eslint": "^9.11.1",
+    "eslint": "^9.13.0",
     "eslint-plugin-format": "^0.1.2",
-    "eslint-plugin-svelte": "^2.44.1",
-    "globals": "^15.10.0",
+    "eslint-plugin-svelte": "^2.45.1",
+    "globals": "^15.11.0",
     "postcss": "^8.4.47",
     "prettier": "^3.3.3",
     "prettier-plugin-svelte": "^3.2.7",
-    "svelte": "^5.0.0-next.243",
+    "svelte": "^5.0.0-next.270",
     "svelte-adapter-bun": "^0.5.2",
-    "svelte-check": "^4.0.4",
-    "tailwindcss": "^3.4.13",
-    "typescript": "^5.6.2",
-    "vite": "^5.4.8"
+    "svelte-check": "^4.0.5",
+    "tailwindcss": "^3.4.14",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.9"
   }
 }
