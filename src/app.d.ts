@@ -6,7 +6,12 @@ declare global {
     // interface Locals {}
     // interface PageData {}
     // interface PageState {}
-    // interface Platform {}
+    interface Platform {
+      env: {
+        PUBLIC_IMAGES_URL: string
+        DATABASE_URL: string
+      }
+    }
   }
 }
 
