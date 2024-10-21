@@ -5,7 +5,8 @@ import postgres from 'postgres'
 let client: postgres.Sql
 
 export function initDb() {
-  client = postgres(env.DATABASE_URL)
+  // @ts-ignore
+  client = postgres(env.OPUS_CLASSICAL_HYPERDRIVE?.connectionString)
 }
 
 export function getDb() {
