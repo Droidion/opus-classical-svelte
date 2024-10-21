@@ -1,5 +1,5 @@
 import { integer, pgTable, serial, text } from 'drizzle-orm/pg-core'
-import { db } from './index'
+import { getDb } from './index'
 
 export const periodsTable = pgTable('periods', {
   id: serial('id').primaryKey(),
@@ -12,7 +12,7 @@ export const periodsTable = pgTable('periods', {
 export type Period = typeof periodsTable.$inferSelect
 
 async function getPeriods(): Promise<Period[]> {
-  return db.select().from(periodsTable)
+  return getDb().select().from(periodsTable)
 }
 
 export const periodRepo = {

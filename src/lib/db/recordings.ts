@@ -1,6 +1,6 @@
 import { eq } from 'drizzle-orm'
 import { integer, pgTable, text } from 'drizzle-orm/pg-core'
-import { db } from './index'
+import { getDb } from './index'
 import { worksTable } from './works'
 
 export const recordingsTable = pgTable('recordings_with_labels', {
@@ -16,7 +16,7 @@ export const recordingsTable = pgTable('recordings_with_labels', {
 export type Recording = typeof recordingsTable.$inferSelect
 
 async function getRecordingsByWork(workId: number): Promise<Recording[]> {
-  return db
+  return getDb()
     .select()
     .from(recordingsTable)
     .where(eq(recordingsTable.workId, workId))

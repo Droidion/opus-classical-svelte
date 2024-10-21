@@ -1,5 +1,5 @@
 import { integer, pgTable, text } from 'drizzle-orm/pg-core'
-import { db } from './index'
+import { getDb } from './index'
 
 export const composerSearchResultsTable = pgTable('composers', {
   id: integer('id').notNull(),
@@ -12,7 +12,7 @@ export type ComposerSearchResult =
   typeof composerSearchResultsTable.$inferSelect
 
 async function getComposerSearchResults(): Promise<ComposerSearchResult[]> {
-  return db.select().from(composerSearchResultsTable)
+  return getDb().select().from(composerSearchResultsTable)
 }
 
 export const composerSearchResultRepo = {

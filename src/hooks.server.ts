@@ -1,5 +1,11 @@
 import type { Handle } from '@sveltejs/kit'
+import { initDb } from '$lib/db'
 import { sequence } from '@sveltejs/kit/hooks'
+
+const handleDb: Handle = async ({ event, resolve }) => {
+  initDb()
+  return resolve(event)
+}
 
 const securityHeaders: Handle = async ({ event, resolve }) => {
   const response = await resolve(event)
@@ -33,4 +39,4 @@ const securityHeaders: Handle = async ({ event, resolve }) => {
   return response
 }
 
-export const handle = sequence(securityHeaders)
+export const handle = sequence(handleDb, securityHeaders)
