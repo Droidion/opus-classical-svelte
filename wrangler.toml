@@ -63,9 +63,9 @@ NODE_VERSION = "20"
 
 # Bind a Hyperdrive configuration. Use to accelerate access to your existing databases from Cloudflare Workers.
 # Docs: https://developers.cloudflare.com/workers/wrangler/configuration/#hyperdrive
-[[hyperdrive]]
-binding = "OPUS_CLASSICAL_HYPERDRIVE"
-id = "298855b2d0014bf6abfe9504dc064c44"
+# [[hyperdrive]]
+# binding = "OPUS_CLASSICAL_HYPERDRIVE"
+# id = "298855b2d0014bf6abfe9504dc064c44"
 
 # Bind a KV Namespace. Use KV as persistent storage for small key-value pairs.
 # Docs: https://developers.cloudflare.com/workers/wrangler/configuration/#kv-namespaces

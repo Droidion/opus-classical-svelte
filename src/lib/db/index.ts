@@ -1,12 +1,11 @@
 import { env } from '$env/dynamic/private'
-import { drizzle } from 'drizzle-orm/postgres-js'
-import postgres from 'postgres'
+import { neon, type NeonQueryFunction } from '@neondatabase/serverless'
+import { drizzle } from 'drizzle-orm/neon-http'
 
-let client: postgres.Sql
+let client: NeonQueryFunction<false, false>
 
 export function initDb() {
-  // @ts-ignore
-  client = postgres(env.OPUS_CLASSICAL_HYPERDRIVE?.connectionString)
+  client = neon(env.DATABASE_URL!)
 }
 
 export function getDb() {
