@@ -1,4 +1,4 @@
-import { describe, expect, test } from 'bun:test'
+import { describe, expect, it } from 'vitest'
 import {
   centuryEqual,
   formatCatalogueName,
@@ -10,13 +10,13 @@ import {
 } from './helpers'
 
 describe('isValidYear', () => {
-  test('identifies valid year', () => {
+  it('identifies valid year', () => {
     expect(isValidYear(500)).toBe(true)
     expect(isValidYear(1000)).toBe(true)
     expect(isValidYear(1234)).toBe(true)
     expect(isValidYear(9999)).toBe(true)
   })
-  test('identifies invalid year', () => {
+  it('identifies invalid year', () => {
     expect(isValidYear(10000)).toBe(false)
     expect(isValidYear(0)).toBe(false)
     expect(isValidYear(-1)).toBe(false)
@@ -25,18 +25,18 @@ describe('isValidYear', () => {
 })
 
 describe('sliceYear', () => {
-  test('creates valid slice', () => {
+  it('creates valid slice', () => {
     expect(sliceYear(1985)).toBe('85')
     expect(sliceYear(9999)).toBe('99')
   })
 })
 
 describe('centuryEqual', () => {
-  test('returns true for equal centuries', () => {
+  it('returns true for equal centuries', () => {
     expect(centuryEqual(1700, 1799)).toBe(true)
     expect(centuryEqual(1750, 1749)).toBe(true)
   })
-  test('returns false for non equal centuries', () => {
+  it('returns false for non equal centuries', () => {
     expect(centuryEqual(1699, 1700)).toBe(false)
     expect(centuryEqual(1799, 1800)).toBe(false)
     expect(centuryEqual(1200, 1500)).toBe(false)
@@ -45,7 +45,7 @@ describe('centuryEqual', () => {
 })
 
 describe('formatYearsRangeString', () => {
-  test('formats years range properly', () => {
+  it('formats years range properly', () => {
     expect(formatYearsRangeString(1900, 1902)).toBe('1900–02')
     expect(formatYearsRangeString(1890, 1912)).toBe('1890–1912')
     expect(formatYearsRangeString(500, 1400)).toBe('500–1400')
@@ -58,7 +58,7 @@ describe('formatYearsRangeString', () => {
 })
 
 describe('formatWorkLength', () => {
-  test('formats properly', () => {
+  it('formats properly', () => {
     expect(formatWorkLength(12)).toBe('12m')
     expect(formatWorkLength(59)).toBe('59m')
     expect(formatWorkLength(60)).toBe('1h')
@@ -70,7 +70,7 @@ describe('formatWorkLength', () => {
 })
 
 describe('formatCatalogueName', () => {
-  test('formats properly', () => {
+  it('formats properly', () => {
     expect(formatCatalogueName('BWV', 12, 'm')).toBe('BWV 12m')
     expect(formatCatalogueName('BWV', 12, null)).toBe('BWV 12')
     expect(formatCatalogueName(null, 12, null)).toBe('')
@@ -80,7 +80,7 @@ describe('formatCatalogueName', () => {
 })
 
 describe('formatWorkName', () => {
-  test('formats properly', () => {
+  it('formats properly', () => {
     expect(formatWorkName('Symphony', 9, 'Great')).toBe('Symphony No. 9 Great')
     expect(formatWorkName('Symphony', 9, null)).toBe('Symphony No. 9')
     expect(formatWorkName('Symphony', null, 'Great')).toBe('Symphony Great')
