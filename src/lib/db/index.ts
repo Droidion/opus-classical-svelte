@@ -1,6 +1,13 @@
 import { env } from '$env/dynamic/private'
-import { drizzle } from 'drizzle-orm/postgres-js'
-import postgres from 'postgres'
+import { neon, type NeonQueryFunction } from '@neondatabase/serverless'
+import { drizzle } from 'drizzle-orm/neon-http'
 
-const client = postgres(env.DATABASE_URL)
-export const db = drizzle(client)
+let client: NeonQueryFunction<false, false>
+
+export function initDb() {
+  client = neon(env.DATABASE_URL!)
+}
+
+export function getDb() {
+  return drizzle(client)
+}

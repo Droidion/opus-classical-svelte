@@ -46,7 +46,7 @@
         links={recording.links}
         performers={recording.performers}
         recording={recording.recording}
-        imagesUrl={env.PUBLIC_IMAGES_URL}
+        imagesUrl={env.PUBLIC_IMAGES_URL!}
       />
     {/each}
   </div>

@@ -1,6 +1,6 @@
 import { eq } from 'drizzle-orm'
 import { boolean, integer, pgTable, serial, text } from 'drizzle-orm/pg-core'
-import { db } from './index'
+import { getDb } from './index'
 import { periodsTable } from './periods'
 
 export const composersTable = pgTable('composers_with_countries', {
@@ -22,11 +22,11 @@ export const composersTable = pgTable('composers_with_countries', {
 export type Composer = typeof composersTable.$inferSelect
 
 async function getComposers(): Promise<Composer[]> {
-  return await db.select().from(composersTable).orderBy(composersTable.lastName)
+  return await getDb().select().from(composersTable).orderBy(composersTable.lastName)
 }
 
 async function getComposerBySlug(slug: string): Promise<Composer | undefined> {
-  const composers = await db
+  const composers = await getDb()
     .select()
     .from(composersTable)
     .where(eq(composersTable.slug, slug))

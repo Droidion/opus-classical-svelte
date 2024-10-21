@@ -1,18 +1,10 @@
 import type { Handle } from '@sveltejs/kit'
-import { dev } from '$app/environment'
-import { env } from '$env/dynamic/public'
-import { handleErrorWithSentry, sentryHandle } from '@sentry/sveltekit'
-import * as Sentry from '@sentry/sveltekit'
+import { initDb } from '$lib/db'
 import { sequence } from '@sveltejs/kit/hooks'
 
-if (!dev) {
-  Sentry.init({
-    dsn: env.PUBLIC_SENTRY_DSN,
-    tracesSampleRate: 1.0,
-
-    // uncomment the line below to enable Spotlight (https://spotlightjs.com)
-    // spotlight: import.meta.env.DEV,
-  })
+const handleDb: Handle = async ({ event, resolve }) => {
+  initDb()
+  return resolve(event)
 }
 
 const securityHeaders: Handle = async ({ event, resolve }) => {
@@ -47,8 +39,4 @@ const securityHeaders: Handle = async ({ event, resolve }) => {
   return response
 }
 
-// If you have custom handlers, make sure to place them after `sentryHandle()` in the `sequence` function.
-export const handle = sequence(sentryHandle(), securityHeaders)
-
-// If you have a custom error handler, pass it to `handleErrorWithSentry`
-export const handleError = handleErrorWithSentry()
+export const handle = sequence(handleDb, securityHeaders)

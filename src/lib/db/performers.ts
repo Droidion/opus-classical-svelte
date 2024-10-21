@@ -1,6 +1,6 @@
 import { inArray } from 'drizzle-orm'
 import { integer, pgTable, text } from 'drizzle-orm/pg-core'
-import { db } from './index'
+import { getDb } from './index'
 
 export const performersTable = pgTable('performers_with_instruments', {
   recordingId: integer('recording_id').notNull(),
@@ -15,7 +15,7 @@ export type Performer = typeof performersTable.$inferSelect
 async function getPerformersByRecordings(
   recordingIds: number[],
 ): Promise<Performer[]> {
-  return db
+  return getDb()
     .select()
     .from(performersTable)
     .where(inArray(performersTable.recordingId, recordingIds))

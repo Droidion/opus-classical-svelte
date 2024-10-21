@@ -1,7 +1,7 @@
 import { eq } from 'drizzle-orm'
 import { integer, pgTable, text } from 'drizzle-orm/pg-core'
 import { composersTable } from './composers'
-import { db } from './index'
+import { getDb } from './index'
 
 export const worksTable = pgTable('works_with_genres', {
   id: integer('id').primaryKey(),
@@ -25,7 +25,7 @@ export const worksTable = pgTable('works_with_genres', {
 export type Work = typeof worksTable.$inferSelect
 
 async function getWorkById(id: number): Promise<Work | undefined> {
-  const works = await db.select().from(worksTable).where(eq(worksTable.id, id))
+  const works = await getDb().select().from(worksTable).where(eq(worksTable.id, id))
   if (works.length === 0) {
     return
   }
@@ -33,7 +33,7 @@ async function getWorkById(id: number): Promise<Work | undefined> {
 }
 
 async function getWorksByComposerId(composerId: number): Promise<Work[]> {
-  return await db
+  return await getDb()
     .select()
     .from(worksTable)
     .where(eq(worksTable.composerId, composerId))
