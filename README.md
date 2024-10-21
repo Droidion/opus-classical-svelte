@@ -11,7 +11,6 @@ With TypeScript, Svelte, and Bun.
 - Create `.env` file with variables:
   - `DATABASE_URL` - PostgreSQL connection string.
   - `PUBLIC_IMAGES_URL` - URL to images.
-  - `PUBLIC_SENTRY_DSN` - Sentry DSN.
 - `$ bun i`.
 - `$ task dev`.
 
