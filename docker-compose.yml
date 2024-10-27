@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  sveltekit-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - 3000
+    networks:
+      - dokploy-network
+    environment:
+      - DATABASE_URL=${DATABASE_URL}
+      - PUBLIC_IMAGES_URL=${PUBLIC_IMAGES_URL}
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.opusclassical.rule=Host(`opusclassical.net`)"
+      - "traefik.http.services.opusclassical.loadbalancer.server.port=3000"
+
+networks:
+  dokploy-network:
+    external: true
