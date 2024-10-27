@@ -7,16 +7,17 @@ services:
       dockerfile: Dockerfile
     restart: always
     ports:
-      - 3000
+      - 9000
     networks:
       - dokploy-network
     environment:
       - DATABASE_URL=${DATABASE_URL}
       - PUBLIC_IMAGES_URL=${PUBLIC_IMAGES_URL}
+      - PORT=${PORT}
     labels:
       - traefik.enable=true
       - traefik.http.routers.opusclassical.rule=Host(`opusclassical.net`)
-      - traefik.http.services.opusclassical.loadbalancer.server.port=3000
+      - traefik.http.services.opusclassical.loadbalancer.server.port=9000
       - "traefik.http.routers.opusclassical.entrypoints=websecure"
       - "traefik.http.routers.opusclassical.tls.certResolver=letsencrypt"
 

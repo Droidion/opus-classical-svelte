@@ -19,6 +19,6 @@ COPY --from=builder /app/package.json ./package.json
 # Install only production dependencies
 RUN bun install --frozen-lockfile
 # Expose the port the app runs on
-EXPOSE 3000
+EXPOSE 9000
 # Command to run the application
 ENTRYPOINT ["bun", "./build"]
