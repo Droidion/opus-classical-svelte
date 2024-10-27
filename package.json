@@ -3,9 +3,9 @@
   "type": "module",
   "version": "0.0.1",
   "private": true,
-  "packageManager": "pnpm@9.12.2",
+  "packageManager": "bun@1.1.33",
   "engines": {
-    "node": ">=20.17.0"
+    "bun": ">=1.1.33"
   },
   "engineStrict": true,
   "scripts": {
