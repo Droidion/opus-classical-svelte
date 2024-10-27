@@ -17,6 +17,8 @@ services:
       - traefik.enable=true
       - traefik.http.routers.opusclassical.rule=Host(`opusclassical.net`)
       - traefik.http.services.opusclassical.loadbalancer.server.port=3000
+      - "traefik.http.routers.opusclassical.entrypoints=websecure"
+      - "traefik.http.routers.opusclassical.tls.certResolver=letsencrypt"
 
 networks:
   dokploy-network:
