@@ -16,7 +16,7 @@
 <a href={composerLink}>
   <div class='mb-3 mr-6'>
     <div>
-      <span>{composer.lastName},&nbsp;</span>
+      <span>{composer.lastName},</span>
       <span class='font-light'>{composer.firstName}</span>
     </div>
     <div class='text-xs font-light whitespace-nowrap'>
