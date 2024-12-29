@@ -12,7 +12,7 @@ export const periodsTable = pgTable('periods', {
 export type Period = typeof periodsTable.$inferSelect
 
 async function getPeriods(): Promise<Period[]> {
-  return getDb().select().from(periodsTable)
+  return getDb().select().from(periodsTable).orderBy(periodsTable.yearStart)
 }
 
 export const periodRepo = {

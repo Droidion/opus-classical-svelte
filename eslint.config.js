@@ -6,4 +6,7 @@ export default antfu({
     css: true,
     html: true,
   },
+  typescript: true,
+  jsonc: false,
+  yaml: false,
 })
