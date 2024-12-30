@@ -17,17 +17,20 @@ const securityHeaders: Handle = async ({ event, resolve }) => {
     csp?.replaceAll('PUBLIC_IMAGES_URL', env.PUBLIC_IMAGES_URL) || '',
   )
 
-  response.headers.set('Referrer-Policy', 'strict-origin-when-cross-origin')
+  response.headers.set('Referrer-Policy', 'no-referrer')
   response.headers.set(
     'Permissions-Policy',
-    'camera=(), microphone=(), geolocation=()',
+    'accelerometer=(), ambient-light-sensor=(), autoplay=(), battery=(), camera=(), cross-origin-isolated=(), display-capture=(), document-domain=(), encrypted-media=(), execution-while-not-rendered=(), execution-while-out-of-viewport=(), fullscreen=(), geolocation=(), gyroscope=(), keyboard-map=(), magnetometer=(), microphone=(), midi=(), navigation-override=(), payment=(), picture-in-picture=(), publickey-credentials-get=(), screen-wake-lock=(), sync-xhr=(), usb=(), web-share=(), xr-spatial-tracking=()',
   )
   response.headers.set('X-Content-Type-Options', 'nosniff')
   response.headers.set('X-Frame-Options', 'DENY')
   response.headers.set(
     'Strict-Transport-Security',
-    'max-age=31536000; includeSubDomains; preload',
+    'max-age=63072000; includeSubDomains; preload',
   )
+
+  response.headers.set('X-XSS-Protection', '1; mode=block')
+  response.headers.set('Cross-Origin-Resource-Policy', 'same-origin')
 
   return response
 }
