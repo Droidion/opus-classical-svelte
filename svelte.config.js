@@ -10,6 +10,20 @@ const config = {
     alias: {
       $components: 'src/components',
     },
+    csp: {
+      directives: {
+        'default-src': ['self'],
+        'script-src': ['self'],
+        'style-src': ['self'],
+        'img-src': ['self', import.meta.env.PUBLIC_IMAGES_URL],
+        'font-src': ['self'],
+        'connect-src': ['self', import.meta.env.PUBLIC_IMAGES_URL],
+        'frame-ancestors': ['none'],
+        'form-action': ['self'],
+        'base-uri': ['self'],
+        'upgrade-insecure-requests': true,
+      },
+    },
   },
 }
 

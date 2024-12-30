@@ -10,20 +10,6 @@ const handleDb: Handle = async ({ event, resolve }) => {
 const securityHeaders: Handle = async ({ event, resolve }) => {
   const response = await resolve(event)
 
-  response.headers.set(
-    'Content-Security-Policy',
-    'default-src \'self\'; '
-    + 'script-src \'self\' \'unsafe-inline\'; '
-    + 'style-src \'self\' \'unsafe-inline\'; '
-    + 'img-src \'self\' data: https:; '
-    + 'font-src \'self\'; '
-    + 'connect-src \'self\' https:; '
-    + 'frame-ancestors \'none\'; '
-    + 'form-action \'self\'; '
-    + 'base-uri \'self\'; '
-    + 'upgrade-insecure-requests;',
-  )
-
   response.headers.set('Referrer-Policy', 'strict-origin-when-cross-origin')
   response.headers.set(
     'Permissions-Policy',

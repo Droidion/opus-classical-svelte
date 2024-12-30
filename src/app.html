@@ -23,11 +23,11 @@
     %sveltekit.head%
   </head>
   <body>
-    <script>
+    <script nonce="%sveltekit.nonce%">
       const theme =
         localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
       document.documentElement.setAttribute('data-theme', theme)
     </script>
-    %sveltekit.body%
+    <div style="display: contents">%sveltekit.body%</div>
   </body>
 </html>
