@@ -19,7 +19,7 @@
   const workYears = $derived(
     formatYearsRangeString(work.yearStart, work.yearFinish),
   )
-  const link = $derived(`composer/${composer.slug}`)
+  const link = $derived(`/composer/${composer.slug}`)
 </script>
 
 <svelte:head>

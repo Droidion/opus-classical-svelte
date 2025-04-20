@@ -1,7 +1,7 @@
 <script lang='ts'>
+  import type { Link } from '$lib/db/links'
   import type { Performer } from '$lib/db/performers'
   import type { Recording } from '$lib/db/recordings'
-  import { type Link } from '$lib/db/links'
   import { formatWorkLength, formatYearsRangeString } from '$lib/helpers'
   import LinkCard from './LinkCard.svelte'
   import PerformerCard from './PerformerCard.svelte'

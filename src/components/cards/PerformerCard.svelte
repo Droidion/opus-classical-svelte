@@ -11,7 +11,7 @@
 <div class='mb-1.5 leading-5'>
   <span>
     {#if performer.firstName}
-      {performer.firstName}<span>&nbsp;</span>
+      {performer.firstName}
     {/if}
     {performer.lastName}
   </span>
